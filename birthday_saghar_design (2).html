@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دعوت‌نامه تولد ساغر</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#111;font-family:Vazirmatn,Tahoma,sans-serif;overflow-x:hidden}
+button{font-family:inherit}
+.gold{color:#c99316}
+.decor{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.confetti{position:absolute;width:8px;height:15px;border-radius:3px;animation:fall 7s linear infinite}
+@keyframes fall{from{transform:translateY(-30px) rotate(0)}to{transform:translateY(110vh) rotate(720deg)}}
+
+/* balloons */
+.balloon{position:absolute;width:64px;height:78px;border-radius:50% 50% 47% 47%;
+box-shadow:inset -12px -14px 18px #0002,inset 8px 7px 12px #fff8;animation:float 4s ease-in-out infinite}
+.balloon:before{content:"";position:absolute;bottom:-5px;left:50%;width:12px;height:12px;background:inherit;transform:translateX(-50%) rotate(45deg)}
+.balloon:after{content:"";position:absolute;top:75px;left:50%;width:1px;height:80px;background:#777}
+@keyframes float{50%{transform:translateY(-18px) rotate(5deg)}}
+.pink{background:#ff5790}.blue{background:#319cf1}.purple{background:#9a58df}
+.yellow{background:#ffd23e}.green{background:#39c978}.orange{background:#ff9344}
+
+/* opening */
+#opening{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;z-index:3}
+.envelope-wrap{width:min(430px,88vw);height:330px;position:relative;cursor:pointer;perspective:1000px}
+.envelope{position:absolute;bottom:25px;width:100%;height:230px;background:#2189df;border-radius:12px;
+box-shadow:0 25px 45px #1976d233;overflow:hidden}
+.envelope:before{content:"";position:absolute;inset:0;background:
+radial-gradient(circle at 15% 25%,#fff8 0 2px,transparent 3px),
+radial-gradient(circle at 75% 65%,#fff7 0 3px,transparent 4px),
+radial-gradient(circle at 40% 80%,#fff7 0 2px,transparent 3px),
+linear-gradient(135deg,#55b8ff,#176fbd)}
+.flower{position:absolute;font-size:28px;opacity:.85}
+.envelope .flower:nth-child(1){top:20px;right:30px}.envelope .flower:nth-child(2){bottom:30px;left:35px}
+.envelope .flower:nth-child(3){top:85px;left:55px}.envelope .flower:nth-child(4){bottom:60px;right:60px}
+.flap{position:absolute;top:37px;width:100%;height:180px;background:#48a9f5;
+clip-path:polygon(0 0,100% 0,50% 78%);transform-origin:top;transition:1s;z-index:5}
+.card{position:absolute;z-index:3;left:7%;width:86%;height:245px;top:65px;background:#fff;
+border-radius:8px;box-shadow:0 8px 25px #0002;display:grid;place-items:center;text-align:center;
+transition:1.2s}
+.card h2{color:#c99316;font-size:27px}
+.seal{position:absolute;z-index:7;top:175px;left:50%;transform:translateX(-50%);
+width:58px;height:58px;border-radius:50%;background:#e5b72d;border:4px solid #fff5c9;
+display:grid;place-items:center;font-size:27px;transition:.6s}
+.envelope-wrap.open .flap{transform:rotateX(180deg)}
+.envelope-wrap.open .card{transform:translateY(-170px)}
+.envelope-wrap.open .seal{opacity:0}
+.openhint{position:absolute;bottom:-5px;left:0;right:0;text-align:center;color:#1476c7;font-weight:800}
+
+/* pages */
+#pages{display:none;position:relative;z-index:2;padding:30px 15px}
+.page{display:none;max-width:900px;min-height:92vh;margin:0 auto 25px;border:2px solid #e7ca6c;
+border-radius:30px;background:#fff;box-shadow:0 20px 60px #00000014;padding:55px 25px 90px;
+position:relative;overflow:hidden}
+.page.active{display:flex;flex-direction:column;align-items:center;justify-content:center;animation:appear .7s}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.page:after{content:"";position:absolute;inset:12px;border:1px solid #c9931640;border-radius:22px;pointer-events:none}
+.nav{position:absolute;bottom:22px;z-index:4;display:flex;gap:10px}
+.nav button{border:0;border-radius:30px;padding:11px 22px;background:#111;color:white;font-weight:800;cursor:pointer}
+.nav .next{background:#c99316}
+
+/* page 1 */
+.title{text-align:center;font-size:clamp(34px,7vw,65px);line-height:1.35;font-weight:900;margin:5px 0 10px}
+.subtitle{font-size:clamp(22px,4vw,34px);font-weight:800;margin:0}
+.spark{font-size:28px}
+.scene{width:350px;height:300px;position:relative;margin:5px auto}
+.girl{position:absolute;left:25px;bottom:20px;width:150px;height:245px}
+.girl .hair{position:absolute;left:5px;top:8px;width:130px;height:145px;background:#4b2a20;border-radius:55% 50% 42% 45%;z-index:1}
+.girl .face{position:absolute;left:23px;top:28px;width:91px;height:100px;background:#ffd0b5;border:2px solid #e5a27f;border-radius:48% 48% 45% 45%;z-index:2}
+.eye{position:absolute;top:49px;width:8px;height:12px;background:#211a18;border-radius:50%}
+.eye:after{content:"";position:absolute;width:12px;height:4px;background:#4b2a20;top:-7px;left:-2px;border-radius:5px}
+.eye.left{left:24px}.eye.right{right:24px}
+.blush{position:absolute;top:67px;width:15px;height:8px;background:#f08e8e55;border-radius:50%}
+.blush.left{left:13px}.blush.right{right:13px}
+.mouth{position:absolute;top:72px;left:37px;width:20px;height:10px;border-bottom:3px solid #d55e67;border-radius:50%}
+.girl .dress{position:absolute;bottom:0;left:12px;width:125px;height:115px;background:#f39bc3;border-radius:55px 55px 18px 18px}
+.girl .arm{position:absolute;width:75px;height:17px;background:#ffd0b5;border-radius:20px;right:-7px;top:125px;transform:rotate(-18deg)}
+.crown{position:absolute;z-index:4;top:-6px;left:28px;font-size:37px;transform:rotate(-8deg)}
+.cake{position:absolute;right:22px;bottom:45px;width:150px;height:86px;background:#ff8fbd;border-radius:15px 15px 23px 23px;
+box-shadow:0 10px 20px #0002;border-bottom:10px solid #d77a9f}
+.cake:before{content:"";position:absolute;left:0;top:-13px;width:100%;height:28px;background:#fff;border-radius:50%;
+box-shadow:0 5px 0 #ffcfdf}
+.cake:after{content:"🍓  🎀  🍓";position:absolute;left:15px;bottom:12px;font-size:18px}
+.candle{position:absolute;top:-53px;width:9px;height:38px;background:#ffd23e;border-radius:5px}
+.c1{left:30px}.c2{left:70px}.c3{left:110px}
+.flame{position:absolute;width:14px;height:19px;background:#ff7c24;border-radius:50% 50% 45% 45%;top:-19px;left:-2px;animation:flicker .4s infinite alternate}
+@keyframes flicker{to{transform:scale(.7);opacity:.7}}
+.blow{position:absolute;right:142px;bottom:135px;font-size:34px;animation:blow 1.2s infinite alternate}
+@keyframes blow{to{transform:translateX(18px);opacity:.35}}
+.music{border:2px solid #c99316;background:#fff7df;border-radius:30px;padding:10px 20px;color:#9b6b00;font-weight:800;cursor:pointer}
+
+/* page 2 */
+.goldbox{max-width:670px;width:100%;border:4px solid #c99316;border-radius:25px;padding:45px 25px;text-align:center;
+box-shadow:inset 0 0 0 2px #f5e4a7,0 15px 40px #c993161c}
+.goldbox h2{font-size:clamp(30px,6vw,48px);color:#c99316;margin:0 0 22px}
+.date{font-size:clamp(27px,5vw,43px);font-weight:900;margin:5px}
+.goldbox p{font-size:clamp(20px,4vw,28px);line-height:2;margin:25px 0 0;font-weight:700}
+
+/* page 3 */
+.blackbox{max-width:730px;width:100%;background:#0d0d0f;color:#fff;border:3px solid #c99316;border-radius:25px;
+padding:38px 27px;text-align:center;box-shadow:0 20px 45px #0003}
+.blackbox h2{color:#e0b43c;font-size:clamp(28px,5vw,43px);margin:0 0 25px}
+.blackbox p{font-size:clamp(19px,3.7vw,27px);line-height:2.1;margin:13px 0}
+.final{color:#e0b43c!important;font-weight:900;margin-top:28px!important}
+
+@media(max-width:600px){
+ .balloon{width:48px;height:62px}
+ .scene{transform:scale(.82);margin:-15px auto -20px}
+ .page{padding-left:15px;padding-right:15px}
+}
+</style>
+</head>
+<body>
+
+<div class="decor">
+  <span class="balloon pink" style="left:3%;top:10%"></span>
+  <span class="balloon blue" style="right:4%;top:18%"></span>
+  <span class="balloon yellow" style="left:8%;bottom:10%"></span>
+  <span class="balloon purple" style="right:8%;bottom:12%"></span>
+  <span class="balloon green" style="left:18%;top:4%;width:48px;height:62px"></span>
+  <span class="balloon orange" style="right:19%;bottom:4%;width:52px;height:66px"></span>
+  <script>
+  const colors=['#ff5790','#319cf1','#ffd23e','#9a58df','#39c978','#ff9344'];
+  for(let i=0;i<38;i++){
+    const x=document.createElement('i');x.className='confetti';
+    x.style.left=Math.random()*100+'%';x.style.background=colors[i%colors.length];
+    x.style.animationDelay=Math.random()*6+'s';x.style.animationDuration=5+Math.random()*5+'s';
+    document.querySelector('.decor').appendChild(x);
+  }
+  </script>
+</div>
+
+<section id="opening">
+  <div class="envelope-wrap" id="env" onclick="openInvite()">
+    <div class="card"><h2>🎂 دعوت‌نامه تولد 🎂<br><small>برای یک شب خفن!</small></h2></div>
+    <div class="envelope">
+      <span class="flower">🌼</span><span class="flower">🌸</span><span class="flower">🌼</span><span class="flower">🌸</span>
+    </div>
+    <div class="flap"></div>
+    <div class="seal">💛</div>
+    <div class="openhint">👆 روی پاکت بزن تا باز بشه ✨</div>
+  </div>
+</section>
+
+<main id="pages">
+<section class="page active" id="page1">
+  <div class="spark">✨ 🎈 💕 🎈 ✨</div>
+  <h1 class="title gold">از این مهم‌تر داریم؟<br>نه عزیزم نداریم!</h1>
+  <p class="subtitle">۱۳ اوریل تولد ساغرِ 😎🎂</p>
+
+  <div class="scene">
+    <div class="girl">
+      <div class="hair"></div><div class="crown">👑</div>
+      <div class="face">
+        <span class="eye left"></span><span class="eye right"></span>
+        <span class="blush left"></span><span class="blush right"></span><span class="mouth"></span>
+      </div>
+      <div class="dress"></div><div class="arm"></div>
+    </div>
+    <div class="blow">💨</div>
+    <div class="cake">
+      <span class="candle c1"><i class="flame"></i></span>
+      <span class="candle c2"><i class="flame"></i></span>
+      <span class="candle c3"><i class="flame"></i></span>
+    </div>
+  </div>
+
+  <button class="music" onclick="toggleMusic()">🎵 پخش آهنگ شاد</button>
+  <div class="nav"><button class="next" onclick="showPage(2)">صفحه بعدی ✨</button></div>
+</section>
+
+<section class="page" id="page2">
+  <div class="spark">👑 ✨ 🎀 ✨ 👑</div>
+  <div class="goldbox">
+    <h2>قرارمون یادت نره! 💛</h2>
+    <div class="date">سه‌شنبه ۲۴ فروردین</div>
+    <div class="date">ساعت ۶</div>
+    <p>منتظرتم که کنارم باشی<br>و با خودت شادی بیاری 🥳🤗</p>
+  </div>
+  <div class="nav">
+    <button onclick="showPage(1)">قبلی</button>
+    <button class="next" onclick="showPage(3)">صفحه بعدی ✨</button>
+  </div>
+</section>
+
+<section class="page" id="page3">
+  <div class="blackbox">
+    <h2>حتماً تم مشکی بزن 👀🖤</h2>
+    <p>که قراره کلی عکس و فیلم‌های خفن بگیریم 🤩📸🎥</p>
+    <p>و کلی گیم بزنیم 🎮 همراه با غذاهای خفنی که سرو میشه 🙂‍↔️🍕🍔</p>
+    <p>و دی‌جی اختصاصی با آهنگ‌های درخواستی شما 💃🏻🪩🎶</p>
+    <p class="final">منتظرم ببینمت دوستم 🫵🏻</p>
+  </div>
+  <div class="nav"><button onclick="showPage(2)">قبلی</button></div>
+</section>
+</main>
+
+<script>
+function openInvite(){
+  const e=document.getElementById('env');
+  e.classList.add('open');
+  setTimeout(()=>{
+    document.getElementById('opening').style.display='none';
+    document.getElementById('pages').style.display='block';
+  },1200);
+}
+function showPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+  scrollTo({top:0,behavior:'smooth'});
+}
+let ctx=null,timer=null,playing=false;
+const melody=[261.63,329.63,392,523.25,440,392,329.63,293.66,349.23,440,523.25,392];
+function toggleMusic(){
+  if(playing){clearInterval(timer);ctx.close();ctx=null;playing=false;return}
+  ctx=new (window.AudioContext||window.webkitAudioContext)();
+  let i=0;
+  timer=setInterval(()=>{
+    const o=ctx.createOscillator(),g=ctx.createGain();
+    o.type='triangle';o.frequency.value=melody[i++%melody.length];
+    g.gain.setValueAtTime(.001,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.11,ctx.currentTime+.02);
+    g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.18);
+    o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.2);
+  },220);
+  playing=true;
+}
+</script>
+</body>
+</html>
